@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Font Control</title>
+    <style>
+        :root {
+            --bg: #12151c;
+            --panel: #191d26;
+            --panel-border: #2a2f3d;
+            --text: #e7e9ee;
+            --text-dim: #9099ab;
+            --amber: #e8a33d;
+            --teal: #4fd1c5;
+            --mono: Consolas, "Cascadia Mono", "Courier New", monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: var(--mono);
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        .wrap {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 16px;
+        }
+
+        .terminal {
+            width: 100%;
+            max-width: 640px;
+            background: rgba(25, 29, 38, 0.92);
+            border: 1px solid var(--panel-border);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(6px);
+        }
+
+        .titlebar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            background: #1e232f;
+            border-bottom: 1px solid var(--panel-border);
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .dot:nth-child(1) { background: #e8746a; }
+        .dot:nth-child(2) { background: #e8c34d; }
+        .dot:nth-child(3) { background: #57c785; }
+
+        .titlebar span {
+            margin-left: 8px;
+            font-family: var(--mono);
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .body {
+            padding: 28px 26px 30px;
+        }
+
+        .prompt {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--teal);
+            margin: 0 0 6px;
+        }
+
+        h1 {
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin: 0 0 20px;
+        }
+
+        #myParagraph {
+            border-style: solid;
+            border-width: 2px;
+            border-color: var(--panel-border);
+            padding: 14px;
+            width: 100%;
+            max-width: 420px;
+            background: #1c212c;
+            border-radius: 7px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-dim);
+            white-space: pre-wrap;
+        }
+
+        .controls {
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            max-width: 320px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        label {
+            font-size: 12.5px;
+            color: var(--text-dim);
+        }
+
+        input[type="text"] {
+            font-family: var(--mono);
+            font-size: 14px;
+            color: var(--text);
+            background: #1c212c;
+            border: 1px solid var(--panel-border);
+            border-radius: 7px;
+            padding: 9px 12px;
+        }
+
+        input[type="text"]::placeholder {
+            color: #565f73;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--teal);
+        }
+
+        button {
+            font-family: var(--mono);
+            font-size: 13.5px;
+            color: var(--text);
+            background: #1c212c;
+            border: 1px solid var(--panel-border);
+            border-radius: 7px;
+            padding: 10px 14px;
+            cursor: pointer;
+            width: fit-content;
+            transition: border-color 0.15s ease, background 0.15s ease;
+        }
+
+        button:hover {
+            border-color: var(--amber);
+            background: #22293a;
+        }
+
+        a {
+            color: var(--teal);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(79, 209, 197, 0.35);
+        }
+
+        a:hover {
+            border-bottom-color: var(--teal);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 30px;
+            padding: 10px 14px;
+            background: #1c212c;
+            border: 1px solid var(--panel-border);
+            border-radius: 7px;
+            font-size: 13px;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            border-color: var(--amber);
+            background: #22293a;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <main class="terminal">
+            <div class="titlebar">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span>lab-three — font-control.html</span>
+            </div>
+
+            <div class="body">
+                <p class="prompt">$ ./css-font-control</p>
+                <h1>CSS Font Control</h1>
+
+                <p id="myParagraph">
+Change the color and border width below!
+==================================
+Cheese Cheese Cheese Cheese Cheese Cheese
+Cheese Cheese Cheese Cheese Cheese Cheese
+Cheese Cheese Cheese Cheese Cheese Cheese
+Cheese Cheese Cheese Cheese Cheese Cheese
+Cheese Cheese Cheese Cheese Cheese Cheese
+Cheese Cheese Cheese Cheese Cheese Cheese
+Cheese Cheese Cheese Cheese Cheese Cheese
+Cheese Cheese Cheese Cheese Cheese Cheese
+Cheese Cheese Cheese Cheese Cheese Cheese
+Cheese Cheese Cheese Cheese Cheese Cheese
+Cheese Cheese Cheese Cheese Cheese Cheese
+                </p>
+
+                <div class="controls">
+                    <div class="field">
+                        <label for="rgbInput">RGB Color (e.g. 255,0,0)</label>
+                        <input type="text" id="rgbInput" placeholder="255,0,0">
+                    </div>
+
+                    <div class="field">
+                        <label for="widthInput">Border Width (px)</label>
+                        <input type="text" id="widthInput" placeholder="2">
+                    </div>
+
+                    <button onclick="updateStyle()">Apply</button>
+                </div>
+
+                <a class="back-link" href="index.html">&larr; Back to home</a>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function updateStyle() {
+            var rgb = document.getElementById("rgbInput").value;
+            var width = document.getElementById("widthInput").value;
+            var para = document.getElementById("myParagraph");
+
+            if (rgb.trim() !== "") {
+                para.style.color = "rgb(" + rgb + ")";
+                para.style.borderColor = "rgb(" + rgb + ")";
+            }
+            if (width.trim() !== "") {
+                para.style.borderWidth = width + "px";
+            }
+        }
+    </script>
+</body>
+
+</html>

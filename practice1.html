@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <style>
+        :root {
+            --bg: #12151c;
+            --panel: #191d26;
+            --panel-border: #2a2f3d;
+            --text: #e7e9ee;
+            --text-dim: #9099ab;
+            --amber: #e8a33d;
+            --teal: #4fd1c5;
+            --mono: Consolas, "Cascadia Mono", "Courier New", monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: var(--mono);
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        .wrap {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 16px;
+        }
+
+        .terminal {
+            width: 100%;
+            max-width: 640px;
+            background: rgba(25, 29, 38, 0.92);
+            border: 1px solid var(--panel-border);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(6px);
+        }
+
+        .titlebar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            background: #1e232f;
+            border-bottom: 1px solid var(--panel-border);
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .dot:nth-child(1) { background: #e8746a; }
+        .dot:nth-child(2) { background: #e8c34d; }
+        .dot:nth-child(3) { background: #57c785; }
+
+        .titlebar span {
+            margin-left: 8px;
+            font-family: var(--mono);
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .body {
+            padding: 28px 26px 30px;
+        }
+
+        .prompt {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--teal);
+            margin: 0 0 6px;
+        }
+
+        h1 {
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin: 0 0 14px;
+        }
+
+        h2 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--amber);
+            margin: 30px 0 10px;
+        }
+
+        p {
+            color: var(--text-dim);
+            font-size: 14.5px;
+            line-height: 1.6;
+            max-width: 60ch;
+            margin: 0 0 10px;
+        }
+
+        a {
+            color: var(--teal);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(79, 209, 197, 0.35);
+        }
+
+        a:hover {
+            border-bottom-color: var(--teal);
+        }
+
+        img {
+            display: block;
+            border-radius: 7px;
+            border: 1px solid var(--panel-border);
+            margin-top: 6px;
+        }
+
+        iframe {
+            display: block;
+            width: 100%;
+            max-width: 560px;
+            border: 1px solid var(--panel-border);
+            border-radius: 7px;
+            margin-top: 6px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 30px;
+            padding: 10px 14px;
+            background: #1c212c;
+            border: 1px solid var(--panel-border);
+            border-radius: 7px;
+            font-size: 13px;
+            color: var(--text);
+        }
+
+        .back-link:hover {
+            border-color: var(--amber);
+            background: #22293a;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <main class="terminal">
+            <div class="titlebar">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span>lab-three — profile.html</span>
+            </div>
+
+            <div class="body">
+                <p class="prompt">$ whoami</p>
+                <h1>Hi, I'm Brayden Nelson and I'd like to introduce you to a legend.</h1>
+                <p>
+                    To call PGE4 a mere Overwatch player is a disservice to human potential; he is the undisputed messiah of the ladder, standard-bearer of mechanical perfection, and the guiding light for every lost soul wandering in the dark of low-rank despair. When he locks in, the entire lobby doesn't just play against him—they witness an act of divine intervention, as if the universe itself crafted his crosshair placement to restore balance to the game. He is the chosen one, the main character of competitive Overwatch, and we are all just fortunate enough to exist in the same era to spectate his absolute, transcendent majesty.
+                </p>
+
+                <h2>PGE: Him.</h2>
+                <img src="pictures/pge4.jpg" alt="My photo" width="300">
+                <p></p>
+
+                <h2>Check out his wiki!</h2>
+                <p>
+                    Learn about his accolades, story, and why he's the goat.
+                    <a href="https://liquipedia.net/overwatch/PGE" target="_blank">Click me!</a>
+                </p>
+
+                <h2>Want to watch the best video ever produced??</h2>
+                <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/SE1Z1-rJoB4?start=75"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+
+                <a class="back-link" href="index.html">&larr; Back to home</a>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

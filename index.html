@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EECS 348 Lab Three</title>
+    <style>
+        :root {
+            --bg: #12151c;
+            --panel: #191d26;
+            --panel-border: #2a2f3d;
+            --text: #e7e9ee;
+            --text-dim: #9099ab;
+            --amber: #e8a33d;
+            --teal: #4fd1c5;
+            --mono: Consolas, "Cascadia Mono", "Courier New", monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: var(--mono);
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        .wrap {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 16px;
+        }
+
+        .terminal {
+            width: 100%;
+            max-width: 560px;
+            background: rgba(25, 29, 38, 0.92);
+            border: 1px solid var(--panel-border);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(6px);
+        }
+
+        .titlebar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            background: #1e232f;
+            border-bottom: 1px solid var(--panel-border);
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .dot:nth-child(1) { background: #e8746a; }
+        .dot:nth-child(2) { background: #e8c34d; }
+        .dot:nth-child(3) { background: #57c785; }
+
+        .titlebar span {
+            margin-left: 8px;
+            font-family: var(--mono);
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .body {
+            padding: 28px 26px 30px;
+        }
+
+        .prompt {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--teal);
+            margin: 0 0 6px;
+        }
+
+        h1 {
+            font-family: var(--mono);
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin: 0 0 14px;
+        }
+
+        .lede {
+            color: var(--text-dim);
+            font-size: 14.5px;
+            line-height: 1.55;
+            margin: 0 0 26px;
+            max-width: 46ch;
+        }
+
+        .practices {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 26px;
+        }
+
+        .practice-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            padding: 12px 14px;
+            background: #1c212c;
+            border: 1px solid var(--panel-border);
+            border-radius: 7px;
+            color: var(--text);
+            text-decoration: none;
+            font-family: var(--mono);
+            font-size: 14.5px;
+            transition: border-color 0.15s ease, transform 0.15s ease, background 0.15s ease;
+        }
+
+        .practice-btn:hover {
+            border-color: var(--amber);
+            background: #22293a;
+            transform: translateX(2px);
+        }
+
+        .practice-btn:focus-visible {
+            outline: 2px solid var(--teal);
+            outline-offset: 2px;
+        }
+
+        .practice-btn .num {
+            font-family: var(--mono);
+            font-size: 12px;
+            color: var(--amber);
+            width: 22px;
+            flex-shrink: 0;
+        }
+
+        .practice-btn .arrow {
+            margin-left: auto;
+            color: var(--text-dim);
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <main class="terminal">
+            <div class="titlebar">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span>lab-three — index.html</span>
+            </div>
+
+            <div class="body">
+                <p class="prompt">$ cd eecs348/lab-three</p>
+                <h1>EECS 348 Lab Three</h1>
+                <p class="lede">
+                    Welcome to the index page for Lab 3. Pick a practice below to open it.
+                </p>
+
+                <nav class="practices">
+                    <a class="practice-btn" href="practice1.html">
+                        <span class="num">01</span> Practice 1 <span class="arrow">&rarr;</span>
+                    </a>
+                    <a class="practice-btn" href="practice2.html">
+                        <span class="num">02</span> Practice 2 <span class="arrow">&rarr;</span>
+                    </a>
+                    <a class="practice-btn" href="practice3.html">
+                        <span class="num">03</span> Practice 3 <span class="arrow">&rarr;</span>
+                    </a>
+                    <a class="practice-btn" href="practice4.php">
+                        <span class="num">04</span> Practice 4 <span class="arrow">&rarr;</span>
+                    </a>
+                </nav>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
